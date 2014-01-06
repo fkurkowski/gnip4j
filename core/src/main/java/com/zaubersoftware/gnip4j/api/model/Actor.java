@@ -29,6 +29,20 @@ import javax.xml.datatype.XMLGregorianCalendar;
  * <p>The following schema fragment specifies the expected content contained within this class.
  *
  */
+/**
+ * TODO: Description of the class, Comments in english by default  
+ * 
+ * 
+ * @author Juan F. Codagnone
+ * @since Apr 19, 2013
+ */
+/**
+ * TODO: Description of the class, Comments in english by default  
+ * 
+ * 
+ * @author Juan F. Codagnone
+ * @since Apr 19, 2013
+ */
 public final class Actor implements Serializable {
     private static final long serialVersionUID = 1;
     private Actor.Location location;
@@ -48,7 +62,13 @@ public final class Actor implements Serializable {
     private String link;
     private String image;
     private String id;
-
+    private boolean verified;
+    
+    // wordpress activity
+    // An md5 hash of the person's email.  
+    // This value can be used to get the person's gravatar. (http://www.gravatar.com/avatar/<md5>)
+    private String wpEmailMd5;
+    
     public Actor.Location getLocation() {
         return location;
     }
@@ -228,6 +248,14 @@ public final class Actor implements Serializable {
     }
 
     
+    public String getWpEmailMd5() {
+        return wpEmailMd5;
+    }
+
+    public void setWpEmailMd5(final String wpEmailMd5) {
+        this.wpEmailMd5 = wpEmailMd5;
+    }
+
     public String getId() {
         return id;
     }
@@ -237,6 +265,13 @@ public final class Actor implements Serializable {
         id = value;
     }
 
+    public boolean isVerified() {
+        return verified;
+    }
+    
+    public void setVerified(final boolean verified) {
+        this.verified = verified;
+    }
 
     public static final class Location implements Serializable {
         
@@ -259,4 +294,6 @@ public final class Actor implements Serializable {
             objectType = value;
         }
     }
+    
+    
 }
